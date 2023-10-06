@@ -14,15 +14,18 @@ public class CampImage {
     @Column(name = "imageID", nullable = false)
     private int imageID;
 
-    @Column(name = "imageData")
-    private byte[] imageData;
+    @Column(name = "imagePath")
+    private String imagePath;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "campID", nullable = false)
     private CampSite campSite;
 
     @Builder
-    public CampImage(byte[] imageData){
-        this.imageData = imageData;
+    public CampImage(String imagePath, CampSite campSite){
+        this.imagePath = imagePath;
+        this.campSite = campSite;
     }
+
+
 }
