@@ -9,7 +9,6 @@ import com.tinygem.camping_spring.web.dto.UploadCampImageRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,8 +32,19 @@ public class CampSiteService {
                                 .longitude(requestDto.getLongitude())
                                 .certified(requestDto.isCertified())
                                 .description(requestDto.getDescription())
+                                .price(requestDto.getPrice())
                                 .build())
                 .getCampID();
+    }
+
+    public int delete(int campID){
+        try{
+            campSiteRepository.deleteById(campID);
+        } catch (Exception e){
+            System.out.println("e = " + e);
+            return -1;
+        }
+         return 1;
     }
 
     public List<CampSite> getAllCampSite() {

@@ -33,14 +33,18 @@ public class CampSite {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "price", nullable = false)
+    private double price;
+
     @Builder
-    public CampSite(String address, String brands, double latitude, double longitude, boolean certified, String description){
+    public CampSite(String address, String brands, double latitude, double longitude, boolean certified, String description, double price){
         this.address = address;
         this.brands = brands;
         this.latitude = latitude;
         this.longitude = longitude;
         this.certified = certified;
         this.description = description;
+        this.price = price;
     }
 
 }

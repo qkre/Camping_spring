@@ -12,4 +12,5 @@ public class AddCampSiteRequestDto {
     private double longitude;
     private boolean certified;
     private String description;
+    private double price;
 }
