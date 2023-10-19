@@ -21,6 +21,10 @@ public class UserService {
             return -1;
         }
 
+        if(requestDto.getEmail().isEmpty() || requestDto.getPwd().isEmpty() || requestDto.getProvider().isEmpty() || requestDto.getNick().isEmpty()){
+            return -1;
+        }
+
         return userRepository.save(
                 User.builder()
                         .accessLevel(requestDto.getAccessLevel())

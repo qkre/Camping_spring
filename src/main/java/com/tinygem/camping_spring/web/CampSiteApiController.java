@@ -20,7 +20,6 @@ import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -112,7 +111,7 @@ public class CampSiteApiController {
         String downloadPath = "images/" + campID + "/";
 
         Path file = Paths.get(downloadPath).resolve(filename).normalize();
-        System.out.println("file = " + file);
+//        System.out.println("file = " + file);
         Resource resource = new UrlResource(file.toUri());
 
         String mimeType = "image/png";
