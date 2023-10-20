@@ -30,7 +30,7 @@ public class CampSite {
     @Column(name = "certified")
     private boolean certified;
 
-    @Column(name = "description", length = 1200)
+    @Column(name = "description", length = 50000)
     private String description;
 
     @Column(name = "price", nullable = false)
